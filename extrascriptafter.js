@@ -1,0 +1,59 @@
+"use strict";
+jQuery(window).ready(function(){
+	jQuery('a').not(".keep-link").click(function(e){
+		e.preventDefault();
+	});
+	jQuery('#btnServices').bind("click",function(){
+		//switchPage('index');
+		switchPage('Products');
+	});
+	jQuery('#btnServices0').bind("click",function(){
+		//switchPage('index','#mission-statement');
+		switchPage('Products','#previous_projects');
+	});
+	jQuery('#btnServices1').bind("click",function(){
+		//switchPage('index','#services');
+		switchPage('Products','#services');
+	});
+	jQuery('#btnAbout_Us').bind("click",function(){
+		switchPage('about-us');
+	});
+	jQuery('#btnAbout_Us0').bind("click",function(){
+		switchPage('about-us','#about-us');
+	});
+	jQuery('#btnAbout_Us_Affiliations').bind("click",function(){
+		switchPage('about-us','#Affiliations');
+	});
+	jQuery('#btnAbout_Us_Team').bind("click",function(){
+		switchPage('about-us','#Team');
+	});
+
+	jQuery('#btn_Products').bind("click",function(){
+		switchPage('index');
+		//switchPage('Products');
+	});
+	jQuery('#btn_Products0').bind("click",function(){
+		switchPage('index','#main_services');
+		//switchPage('Products','#Products');
+	});
+	jQuery('#btn_Products1').bind("click",function(){
+		switchPage('index','#SucessStories');
+		//switchPage('Products','#SucessStories');
+	});
+	jQuery('#btnContactUs').bind("click",function(){
+		switchPage('contact-us');
+	});
+	jQuery('#btnContactUs0').bind("click",function(){
+		switchPage('contact-us');
+	});
+
+	jQuery('#btnContactUs1').bind("click",function(){
+		switchPage('contact-us');
+	});
+	jQuery(document).ready(function(){
+		var s = window.location.hash;
+		if(!!s){
+			switchPage(s.substring(2));
+		}
+	});
+});
